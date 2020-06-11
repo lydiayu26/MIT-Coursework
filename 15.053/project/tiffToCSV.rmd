@@ -1,0 +1,37 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+# install.packages("raster")
+# install.packages("gdal")
+library(raster)
+library(rgdal)
+
+convertTiff <- function(file, naParam=0, rows=75, cols=45) {
+  data <- getRasterData(GDAL.open(file))
+  data[is.na(data)] <- naParam
+  
+  numColBlocks <- cols
+  numRowBlocks <- rows
+  output <- matrix(data = NA, nrow = numRowBlocks, ncol = numColBlocks)
+  
+  colBlockSize <- floor(ncol(data) / numColBlocks)
+  rowBlockSize <- floor(nrow(data) / numRowBlocks)
+  
+  for (r in 1:numRowBlocks) {
+    rCell <- (r-1)*rowBlockSize+1
+    for (c in 1:numColBlocks) {
+      cCell <- (c-1)*colBlockSize+1
+      blockSum <- sum(data[rCell:min(nrow(data),(rCell+rowBlockSize-1)), cCell:min(ncol(data),(cCell+colBlockSize-1))])
+      output[r,c] <- blockSum
+    }
+  }
+  
+  write.csv(output, file = "output.csv", row.names=FALSE)
+}
+
+convertTiff(file="hrsl_pri_pop.tif", rows=80, cols=80)
+```
+

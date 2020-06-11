@@ -1,0 +1,8 @@
+﻿Bond name,Bond Type,Moody's rating,Bank's rating,Years to maturity,Yield to maturity  %,After tax yield,decimal tax yield
+A,Municipal,Aa,2,9,4.3,4.3,0.043
+B,Agency,Aa,2,15,5.4,2.7,0.027
+C,Government,Aaa,1,4,5,2.5,0.025
+D,Government,Aaa,1,3,4.4,2.2,0.022
+E,Municipal,Ba,5,2,4.5,4.5,0.045
+,,,,,,,
+,,,,,,,

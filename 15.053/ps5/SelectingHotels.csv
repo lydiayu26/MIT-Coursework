@@ -1,0 +1,17 @@
+Hotel,Location,Price,Price (normalized),Square Root of Median Income (normalized),College Students in Area (normalized),State Population Per Inn (normalized),Profitability
+1,"Eureka, California",2925000.00,-0.3,-0.81,-0.54,-1,44.2599
+2,"Fresno, California",10000000.00,0.35,-0.41,0.31,-0.47,45.4531
+3,"Fresno, California",3750000.00,-0.07,-0.41,0.31,-0.47,42.9919
+4,"Fresno, California",3500000.00,-0.14,-0.41,0.31,-0.47,42.5817
+5,"Fresno, California",325000.00,-1.04,-0.41,0.31,-0.47,37.3077
+6,"Long Beach, California",8950000.00,1.4,0.66,0.48,-0.56,49.0842
+7,"Los Angeles, California",1950000.00,-0.58,0.17,3.11,3.11,23.7433
+8,"Los Angeles, California",1750000.00,-0.63,0.17,3.11,3.11,23.4503
+9,"Los Angeles, California",4900000.00,0.26,0.17,3.11,3.11,28.6657
+10,"South Lake Tahoe, California",1650000.00,-0.66,-0.79,-0.59,-0.43,38.9173
+11,"South Lake Tahoe, California",1125000.00,-0.81,-0.79,-0.59,-0.43,38.0383
+12,"South Lake Tahoe, California",2500000.00,-0.42,-0.79,-0.59,-0.43,40.3237
+13,"South Lake Tahoe, California",1975000.00,-0.57,-0.79,-0.59,-0.43,39.4447
+14,"South Lake Tahoe, California",3750000.00,-0.07,-0.79,-0.59,-0.43,42.3747
+15,"South Lake Tahoe, California",1475000.00,-0.71,-0.79,-0.59,-0.43,38.6243
+16,"South Lake Tahoe, California",750000.00,-0.92,-0.79,-0.59,-0.43,37.3937

@@ -1,0 +1,8 @@
+First release: November, 2016. 
+
+Second release: March, 2017. 
+No changes to the population data. An additional band was added to the GeoTIFF file containing a flag (1) in pixels where a building or buildings was detected. 
+The shapefile with time and cloud cover was dissolved to reduce the number of polygons and file size.
+
+This release: October 2018.
+Data that was previously represented as raster bands within one GeoTIFF have been exported into separate GeoTiffs (one for population data and one for settlement data). Metadata has been added to each new individual raster. The data itself has not changed.
