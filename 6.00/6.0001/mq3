@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Oct  1 16:10:36 2018
+
+@author: lydiayu
+"""
+
+def mutate_dict(d, other):
+    """
+    d and other: dictionaries that map int:int
+    Mutates d. If a key in other is already in d, changes 
+    the value of the key in d to be the value in other.
+    If a key in other is not in d, adds the key:value pair to d. 
+    Does not return anything.
+    """
+    for i in d:
+        if i in other and (d[i] != other[i]):
+            d[i] = other[i]
+                
+    for entry in other:
+        if entry not in d:
+            d[entry] = other[entry]
+            
+    print(d)

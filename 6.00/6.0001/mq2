@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Sep 24 16:12:01 2018
+
+@author: lydiayu
+"""
+
+def is_in(inner, outer):
+    """
+    inner and outer: lists of ints
+    Returns a list containing elements in inner that are not in outer.
+    If all elements in inner are also in outer, returns the empty list.
+    The list returned should be sorted in ascending order.
+    """
+    my_list = []
+    
+    for i in inner:
+        if i not in outer:
+            my_list.append(i)
+            
+    my_list.sort()
+    return my_list
