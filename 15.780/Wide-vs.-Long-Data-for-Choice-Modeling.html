@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Ted Papalexopoulos, Doron Hazan" />
+
+
+<title>Wide vs. Long Data in MNL</title>
+
+<script src="Wide-vs.-Long-Data-for-Choice-Modeling_files/header-attrs-2.5/header-attrs.js"></script>
+<script src="Wide-vs.-Long-Data-for-Choice-Modeling_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="Wide-vs.-Long-Data-for-Choice-Modeling_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="Wide-vs.-Long-Data-for-Choice-Modeling_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="Wide-vs.-Long-Data-for-Choice-Modeling_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="Wide-vs.-Long-Data-for-Choice-Modeling_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="Wide-vs.-Long-Data-for-Choice-Modeling_files/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="Wide-vs.-Long-Data-for-Choice-Modeling_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="Wide-vs.-Long-Data-for-Choice-Modeling_files/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="Wide-vs.-Long-Data-for-Choice-Modeling_files/navigation-1.1/tabsets.js"></script>
+<link href="Wide-vs.-Long-Data-for-Choice-Modeling_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="Wide-vs.-Long-Data-for-Choice-Modeling_files/highlightjs-9.12.0/highlight.js"></script>
+<link href="Wide-vs.-Long-Data-for-Choice-Modeling_files/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="Wide-vs.-Long-Data-for-Choice-Modeling_files/anchor-sections-1.0/anchor-sections.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Wide vs. Long Data in MNL</h1>
+<h4 class="author">Ted Papalexopoulos, Doron Hazan</h4>
+
+</div>
+
+
+<div id="intro" class="section level2">
+<h2>Introduction</h2>
+<p>This is a supporting document for Recitation 4, and aims to give a bit more intuition about the difference between long and wide data for choice modeling R. It explains the use of the <code>mlogit.data()</code> function to format transaction data, and how we use it with <code>mlogit()</code> to create an MNL model.</p>
+</div>
+<div id="data" class="section level2">
+<h2>Understanding choice data</h2>
+<p>Let’s first refine rigorously what we mean by transaction <strong>choice</strong> data. There are four basic ingredients:</p>
+<ol style="list-style-type: decimal">
+<li>The <strong>assortment</strong> of <em>all</em> products that a customer was shown (e.g. ticket A and ticket B).</li>
+<li>The <strong>product features</strong>, i.e. characteristics of each product that may have influenced their decision (e.g. price and travel time of A and B).</li>
+<li>The <strong>user features</strong>, i.e. characteristics of the customer that may have influenced their decision (e.g. income).</li>
+<li>What <strong>choice</strong> the customer ultimately made.</li>
+</ol>
+<p>There are two ways to store this data in a table that are <em>exactly</em> equivalent: <strong>long</strong> format and <strong>wide</strong> format.</p>
+<div id="long" class="section level3">
+<h3>Long format</h3>
+<p>Each row in the table corresponds to a different product/customer combination. There are <code>M</code> rows per choice made, one for each of the <em>M</em> products that the customer was shown. Here’s an example:</p>
+<pre class="r"><code>head(train_long)</code></pre>
+<pre><code>## # A tibble: 6 x 6
+##      id option choice price  time income
+##   &lt;int&gt; &lt;chr&gt;  &lt;lgl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+## 1     1 A      FALSE   2320    95 100000
+## 2     1 B      TRUE    1740   105 100000
+## 3     2 A      TRUE    2800   115  33000
+## 4     2 B      FALSE   4000   115  33000
+## 5     3 A      FALSE   3500   115  94000
+## 6     3 B      TRUE    2975   130  94000</code></pre>
+<p>You can see that there are multiple rows for a customer’s choice, since there are multiple rows for each <code>id</code>. Now let’s look for each of our four ingredients:</p>
+<ol style="list-style-type: decimal">
+<li>There is a column <code>option</code> that tells us the product’s name (A or B).</li>
+<li>The <code>price</code> and <code>time</code> columns correspond to product features.
+<ul>
+<li>For the first id, choice A had price 2320 (first row) while choice B had price 1740 (second row).</li>
+</ul></li>
+<li>The <code>income</code> column is a user feature.
+<ul>
+<li>Note that <em>for a given id</em> this feature is always the same!</li>
+<li>The income of the user is the same when they’re choosing between A and B.</li>
+</ul></li>
+<li>The <code>choice</code> column tells us whether the customer chose a particular product.
+<ul>
+<li>For the first id, the customer chose B so <code>choice</code> was FALSE in A’s row but TRUE in B’s row.</li>
+</ul></li>
+</ol>
+</div>
+<div id="wide" class="section level3">
+<h3>Wide format</h3>
+<p>Now let’s see how we could store <em>exactly</em> the same data but in wide format. Here, every row corresponds to a single user, and contains the information on all of the products they were shown.</p>
+<pre class="r"><code>head(train_wide, 3)</code></pre>
+<pre><code>## # A tibble: 3 x 7
+##      id choice price_A time_A price_B time_B income
+##   &lt;int&gt; &lt;fct&gt;    &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+## 1     1 B         2320     95    1740    105 100000
+## 2     2 A         2800    115    4000    115  33000
+## 3     3 B         3500    115    2975    130  94000</code></pre>
+<p>Note that there’s only one row per <code>id</code>, but our ingredients are all there:</p>
+<ol style="list-style-type: decimal">
+<li>The options A and B are now <em>implicitly</em> defined. If we look over all users (i.e. all rows), the <code>choice</code> column (which actually gives us ingredient 4), will contain all of the possible products someone might have chosen.</li>
+<li>There’s now two columns per product feature, because we need one for each option <code>price_A</code>, <code>price_B</code>, <code>time_A</code>, <code>time_B</code>.
+<ul>
+<li>Note the very specific format for the product feature column names: <code>&lt;feature name&gt;&lt;separator&gt;&lt;choice name&gt;</code>.</li>
+<li>Specifically, the <code>&lt;feature name&gt;</code> part is exactly the same for both options.</li>
+<li>The <code>&lt;choice name&gt;</code> part is exactly the same as what appears in the <code>choice</code> column.<br />
+</li>
+<li>This naming convention will turn out to be crucial for R. We’ll see why shortly.</li>
+</ul></li>
+<li>The user feature <code>income</code> is still only one column, since it doesn’t differ between products.</li>
+<li>The <code>choice</code> column contains the name of the product that was actually chosen.</li>
+</ol>
+</div>
+</div>
+<div id="mlogitdata" class="section level2">
+<h2>Using <code>mlogit.data</code></h2>
+<p>As we saw in Recitation 4, when training an MNL model we always want to put into a format that the <code>mlogit()</code> function knows how to use. Remember how to run an ARIMA model, we needed to create a <code>ts</code>-class object to contain the time series we wanted to model? Here, we want to use <code>mlogit.data()</code> function to create a special object that contains our choice data – this is what <code>mlogit()</code> will later expect us to give it.</p>
+<p>It turns out that all <code>mlogit.data()</code> does is create <em>long</em>-format data table with some extra meta-information. This isn’t exactly a <code>data.frame</code> object, but it basically looks like one. The nice thing about it is that you can give it your data in long <em>or</em> wide format, and it will do a lot of dark magic to autmatically infer what the columns mean.</p>
+<div id="mlogitdatalong" class="section level3">
+<h3>Long format</h3>
+<p>Let’s first look at using <code>mlogit.data()</code> with <em>long</em> data:</p>
+<pre class="r"><code>dat_from_long  = mlogit.data(train_long, 
+                             shape=&quot;long&quot;, 
+                             alt.var = &quot;option&quot;, 
+                             alt.levels = c(&quot;A&quot;,&quot;B&quot;),
+                             id.var = &quot;id&quot;)
+dat_from_long</code></pre>
+<pre><code>## # A tibble: 5,858 x 8
+##       id option choice price  time income   id1 idx$chid $alt 
+##    &lt;int&gt; &lt;fct&gt;  &lt;lgl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;int&gt;    &lt;int&gt; &lt;fct&gt;
+##  1     1 A      FALSE   2320    95 100000     1        1 A    
+##  2     1 B      TRUE    1740   105 100000     1        1 B    
+##  3     2 A      TRUE    2800   115  33000     2        2 A    
+##  4     2 B      FALSE   4000   115  33000     2        2 B    
+##  5     3 A      FALSE   3500   115  94000     3        3 A    
+##  6     3 B      TRUE    2975   130  94000     3        3 B    
+##  7     4 A      TRUE    3500    95  83000     4        4 A    
+##  8     4 B      FALSE   3500   120  83000     4        4 B    
+##  9     5 A      TRUE    5250   165  71000     5        5 A    
+## 10     5 B      FALSE   6300   150  71000     5        5 B    
+## # … with 5,848 more rows</code></pre>
+<p>The output looks basically the same as what we fed in (<code>train_long</code>). It contains all of the columns from before, but it has created some of its own indexing columns (<code>id1</code>, <code>idx$chid</code>, <code>$alt</code>) It’s not important to understand exactly why these are there – they’re actually redundant but R wants them.</p>
+<p>Now let’s take a closer look at the arguments we used:</p>
+<ul>
+<li><code>train_long</code>: here’s the (long-formatted) data frame you should use.</li>
+<li><code>shape="long"</code>: you should expect the data to be in <em>long</em> format.</li>
+<li><code>alt.var="option"</code>: the <code>option</code> column is where you will find ingredient 1 (the names of the options)</li>
+<li><code>alt.levels=c("A","B")</code>: here are all the possible options.
+<ul>
+<li>Note that we could actually exclude this, since R will just look at <code>option</code> column we specified as <code>alt.var</code>.</li>
+<li>Alternatively, we could have excluded <code>alt.var</code> (as we did in Recitation), and R would have dark magic to infer it (by looking at which column contained only “A”s and “B”s).</li>
+</ul></li>
+<li><code>choice="choice"</code>: the <code>choice</code> column is where you will find ingredient 4 (the choice that the user made).</li>
+<li><code>id.var="id"</code>: The <code>id</code> column identifies a user.
+<ul>
+<li>In long format, this is important because R needs to identify which rows correspond to a single assortment.</li>
+</ul></li>
+</ul>
+<p><em>Note:</em> In this case, we didn’t actually have to tell R what columns were user vs. product features! Because this is long data, they’re inferred automatically (anything that isn’t the option, choice or id). When we run the MNL model later we’ll have to specify what is a user vs. product feature, but for the formatting part it doesn’t make a difference to R. <em>This will not be the case for wide data.</em></p>
+</div>
+<div id="mlogitdatawide" class="section level3">
+<h3>Wide format</h3>
+<p>Now let’s look at doing the same thing with <em>wide</em> data:</p>
+<pre class="r"><code>dat_from_wide = mlogit.data(train_wide, 
+                            shape = &quot;wide&quot;, 
+                            choice = &quot;choice&quot;,
+                            varying = c(3,4,5,6),
+                            sep=&quot;_&quot;,
+                            id.var = &quot;id&quot;)
+dat_from_wide</code></pre>
+<pre><code>## # A tibble: 5,858 x 8
+##       id choice income alt   price  time  chid idx$chid   $id $alt 
+##    &lt;int&gt; &lt;lgl&gt;   &lt;dbl&gt; &lt;fct&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;    &lt;int&gt; &lt;int&gt; &lt;fct&gt;
+##  1     1 FALSE  100000 A      2320    95     1        1     1 A    
+##  2     1 TRUE   100000 B      1740   105     1        1     1 B    
+##  3     2 TRUE    33000 A      2800   115     2        2     2 A    
+##  4     2 FALSE   33000 B      4000   115     2        2     2 B    
+##  5     3 FALSE   94000 A      3500   115     3        3     3 A    
+##  6     3 TRUE    94000 B      2975   130     3        3     3 B    
+##  7     4 TRUE    83000 A      3500    95     4        4     4 A    
+##  8     4 FALSE   83000 B      3500   120     4        4     4 B    
+##  9     5 TRUE    71000 A      5250   165     5        5     5 A    
+## 10     5 FALSE   71000 B      6300   150     5        5     5 B    
+## # … with 5,848 more rows</code></pre>
+<p>The various internal columns (<code>chid</code>, <code>idx</code>) are named slightly differently, but the special data frame is basically the same! The only minor difference is that the <code>option</code> column (containing the different product options) is now called <code>alt</code>. In the long example, there was already a column called <code>option</code> so R kept it that way. In this case, the options were implicitly coded, so when converting to long format it picked the name <code>alt</code>, and kept <code>choice</code> for the TRUE/FALSE vector of which option was chosen.</p>
+<p>Let’s talk arguments:</p>
+<ul>
+<li><code>train_long</code>: here’s the (wide-formatted) data frame you should use.</li>
+<li><code>shape="wide"</code>: you should expect the data to be in <em>wide</em> format.</li>
+<li><code>choice="choice"</code>: the <code>choice</code> column is where you will find ingredients 1 and 4 (the names of the options, and the user’s particular choice).</li>
+<li><code>varying=c(3,4,5,6)</code>: columns 3,4,5,6 are where you will find the <em>product</em> features.
+<ul>
+<li>Go back up and check! 3rd column was “price_A”, 4th was “price_B”, 5th was “time_A” and 6th was “time_B”.</li>
+<li><em>Varying</em> just means “these are the columns that <em>vary</em> from product option to product option”.</li>
+<li>This argument is what tells what columns will be split into different rows (the product features), and what columns will be duplicated in all rows (the user-features, i.e. the rest of them).</li>
+</ul></li>
+<li><code>sep="_"</code>: In the <em>varying</em> columns, what character separates the feature name from the option name?
+<ul>
+<li>Remember that naming convention? <em>This</em> is why we need the right names.</li>
+</ul></li>
+<li><code>id.var="id"</code>: The <code>id</code> column identifies a user.
+<ul>
+<li>This is less important now because there’s only one row per user (we could exclude it if we wanted).</li>
+</ul></li>
+</ul>
+<p><strong>I cannot emphasize enough how important the naming convention and varying argument are</strong>. The function doesn’t have the most intuitive error messages, so always check that:</p>
+<ol style="list-style-type: decimal">
+<li>The product features are named <code>&lt;feature&gt;&lt;sep&gt;&lt;option&gt;</code> where:
+<ul>
+<li>The <code>&lt;feature&gt;</code> part is the same for all options</li>
+<li>The <code>&lt;sep&gt;</code> character is the same for all columns (whatever you plan to pass to the <code>sep</code> argument)</li>
+<li>The <code>&lt;option&gt;</code> part uses the exact option names from the <code>choice</code> column (capitalization matters!)</li>
+</ul></li>
+<li>You pass the correct column numbers to <code>varying</code>.
+<ul>
+<li>These should include <em>only</em> the product features, with the exact naming convention above.</li>
+<li>You should not include the indices for any of the id/choice/user-feature cp;i,ms</li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div id="estimating-mnl-models" class="section level2">
+<h2>Estimating MNL models</h2>
+<div id="running-mlogit" class="section level3">
+<h3>Running <code>mlogit</code></h3>
+<p>We can now use the <code>mlogit()</code> function to actually estimate the model parameters. Whatever your format was originally, you now have this nice little R object that you want to pass as the <code>data</code> argument to <code>mlogit</code>. Let’s first check to see that the result is the same when using the objects create using long and wide data:</p>
+<pre class="r"><code>mod1 = mlogit(choice ~ price + time | income, data = dat_from_long) # Build the model
+coef(mod1) # Extract the coefficients</code></pre>
+<pre><code>## (Intercept):B         price          time      income:B 
+## -8.358376e-02 -1.024627e-03 -1.395969e-02  8.418177e-07</code></pre>
+<pre class="r"><code>mod1 = mlogit(choice ~ price + time | income, data = dat_from_wide) # Build the model
+coef(mod1) # Extract the coefficients</code></pre>
+<pre><code>## (Intercept):B         price          time      income:B 
+## -8.358376e-02 -1.024627e-03 -1.395969e-02  8.418177e-07</code></pre>
+<p>Sanity check complete. As we expected: since the underlying data was the same in <code>train_long</code> and <code>train_wide</code> (and therefore <code>data_from_long</code> and <code>data_from_wide</code>) the model should be the same. The <em>long</em> vs. <em>wide</em> formats are different, but exactly equivalent ways of storing the data.</p>
+</div>
+<div id="the-formula-for-mlogit" class="section level3">
+<h3>The formula for <code>mlogit()</code></h3>
+<p>Let’s recall what the formula syntax looks like for the first argument to <code>mlogit()</code>:</p>
+<pre><code>## dependent ~ prodfeat1 + prodfeat2 + ... | userfeat1 + userfeat2 + 
+##     ... - 1</code></pre>
+<p>This is what tells R what columns of our special data object to use as dependent/independent variables (similar to how the formula in the <code>lm</code> function told us what the Y and X variables were). There’s four parts to understand:</p>
+<ol style="list-style-type: decimal">
+<li><code>dependent</code>: On the left of the <code>~</code> is the name of the dependent variable we’re trying to predict.
+<ul>
+<li>In our example, the TRUE/FALSE <code>choice</code> column from our special object.</li>
+</ul></li>
+<li><code>prodfeatX</code>: On the right of the <code>~</code>, but left of of <code>|</code>, are all the names of product features.
+<ul>
+<li>In our example, <code>price</code> and <code>time</code>.</li>
+</ul></li>
+<li><code>userfeatX</code>: On the right of <code>|</code> are all the names of user features.
+<ul>
+<li>In our example, <code>income</code>.</li>
+</ul></li>
+<li><code>-1</code> <em>(optional)</em>: tagged on at the very end to exclude the intercept.
+<ul>
+<li>In our example, we didn’t include the <code>-1</code> so the model <em>did</em> estimate an intercept.</li>
+</ul></li>
+</ol>
+</div>
+<div id="understanding-the-coefficients" class="section level3">
+<h3>Understanding the coefficients</h3>
+<p>Finally let’s briefly recall what the coefficients mean. Recall that according to the MNL model, the probability a user chooses option <span class="math inline">\(i\)</span> when shown an assortment <span class="math inline">\(S\)</span> is:</p>
+<p><span class="math display">\[P(i|S) = \frac{e^{v_i}}{\sum_{k\in S} e^{v_k}}\]</span></p>
+<p>Where the <span class="math inline">\(v_i\)</span> are the values of the given product (higher value means higher probability).</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>NOTE</strong></td>
+</tr>
+<tr class="even">
+<td align="left">Unlike the lecture notes (but like the lecture and recitation examples), the denominator does not include a <code>1 +</code> because there is no outside option (users must pick A or B, they can’t walk away). This will generally be the case whenever you’re dealing with transaction data; we usually don’t have data for people who walked away because they didn’t buy anything.</td>
+</tr>
+</tbody>
+</table>
+<p>Instead of calculating a value <span class="math inline">\(v_i\)</span> for every combination of price/travel time/user income, we want to use the transaction data to come up with a simple formula. For a given set of product/user features the formula will tell us the <span class="math inline">\(v_i\)</span> of a product.</p>
+<p>To be concrete, here are the coefficients from our example again:</p>
+<pre><code>## (Intercept):B         price          time      income:B 
+## -8.358376e-02 -1.024627e-03 -1.395969e-02  8.418177e-07</code></pre>
+<p>What these are saying is that the values of options A and B are:</p>
+<p><span class="math display">\[
+v_A = \beta_{price} \cdot \text{price} + \beta_{time} \cdot \text{time} \\
+v_B = \beta_{Intercept:B} + \beta_{price} \cdot \text{price} + \beta_{time} \cdot \text{time} + \beta_{income:B} \cdot \text{income}
+\]</span> Then for a new user with new choices for A and Bm we can go and plug in to our <span class="math inline">\(P(i|S)\)</span> to get the probability of choosing one of the other. A few things to note:</p>
+<ol style="list-style-type: decimal">
+<li>The coefficients for product features<code>price</code> and <code>income</code> are the <em>same</em> for both options.
+<ul>
+<li>This is what we’ve seen in the vanilla version in lecture/recitation.</li>
+</ul></li>
+<li>The intercept behaviour is different – in fact, it seems that B has an intercept but A doesn’t.
+<ul>
+<li>Technically speaking <span class="math inline">\(v_A\)</span> does contain an intercept, it’s just <span class="math inline">\(\beta_{Intercept:A} = 0\)</span>.</li>
+</ul></li>
+<li>The user features also behave differently – B has a dependence for <code>income</code>, but A doesn’t.
+<ul>
+<li>Again, <span class="math inline">\(v_A\)</span> technically depends on income, it’s just that <span class="math inline">\(\beta_{income:A} = 0\)</span>.</li>
+</ul></li>
+</ol>
+<p>Let’s try to understand why (2) and (3). It all has to do with the fact that <span class="math inline">\(p(i|S)\)</span> depends on the <em>relative</em> <span class="math inline">\(v_i\)</span>’s of the products. If I increased the <span class="math inline">\(v_i\)</span>’s of both products by the same amount, the probabilities wouldn’t change (<em>technical note</em>: so that’s not exactly true because of the exponent, but it’s true to first order).</p>
+<p>What matters then is <em>relative</em> difference in the intercepts. There’s an extra degree of freedom: if R increased both intercepts by the same amount, the <span class="math inline">\(v_A\)</span> and <span class="math inline">\(v_B\)</span> would increase by the same amount and so the relative probabilities wouldn’t change. So it doesn’t matter if you set one of them 0, and just estimate the other one. R just picks the first option alphabetically (A).</p>
+<p>It’s a similar idea for why the user feature coefficients are different for each option (i.e. the impact of <code>income</code> is a different coefficient for A and B). Think about it: for a given user, the income term is the same in both <span class="math inline">\(v_A\)</span> and <span class="math inline">\(v_B\)</span>. If we had a common coefficient for income in A and B, the difference of <span class="math inline">\(v_A\)</span> and <span class="math inline">\(v_B\)</span> would be the same not matter what their income was. Income wouldn’t change the probabilities of choose A or B. You can make a similar argument as we did for the intercept for why it’s also OK to set one of the income coefficients to 0 (again, in our case A).</p>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
