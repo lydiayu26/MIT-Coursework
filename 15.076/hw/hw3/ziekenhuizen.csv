@@ -1,0 +1,111 @@
+name,type,street,nr,addition,zip,city,P,address,lat,lon
+ADMIRAAL DE RUYTER ZIEKENHUIS,H,s-Gravenpolderseweg,114,,4462 RA,Goes,Rotterdam,"s-Gravenpolderseweg 114, Goes, Netherlands",51.4847355,3.9071113
+ALBERT SCHWEITZER ZIEKENHUIS (DORDWIJK),H,Albert Schweitzerplaats,25,,3318 AT,Dordrecht,Rotterdam,"Albert Schweitzerplaats 25, Dordrecht, Netherlands",51.7919889,4.6824056
+ALBERT SCHWEITZER ZIEKENHUIS (ZWIJNDRECHT),H,Langeweg,336,,3331 LZ,Zwijndrecht,Rotterdam,"Langeweg 336, Zwijndrecht, Netherlands",51.827139,4.6295742
+AMPHIA ZIEKENHUIS (LANGENDIJK),H,Langendijk,75,,4819 EV,Breda,Rotterdam,"Langendijk 75, Breda, Netherlands",51.5740572,4.76293677249866
+AMPHIA ZIEKENHUIS (MOLENGRACHT),H,Molengracht,21,,4818 CK,Breda,Rotterdam,"Molengracht 21, Breda, Netherlands",51.5805933,4.7983511
+BEATRIX ZIEKENHUIS,H,Banneweg,57,,4204 AA,Gorinchem,Rotterdam,"Banneweg 57, Gorinchem, Netherlands",51.8386388,4.9576836
+HAAGLANDEN MEDISCH CENTRUM (BRONOVO),H,Bronovolaan,5,,2597 AX,Den Haag,Rotterdam,"Bronovolaan 5, Den Haag, Netherlands",52.10138205,4.317952162640447
+BRAVIS ZIEKENHUIS (ROOSENDAAL),H,Boerhaavelaan,25,,4708 AE,Roosendaal,Rotterdam,"Boerhaavelaan 25, Roosendaal, Netherlands",51.52798225,4.438968300023488
+GROENE HART ZIEKENHUIS (BLEULAND),H,Bleulandweg,10,,2803 HH,Gouda,Rotterdam,"Bleulandweg 10, Gouda, Netherlands",52.0215477,4.7069874
+HAGA ZIEKENHUIS (LEYWEG),H,Leyweg,275,,2545 CH,Den Haag,Rotterdam,"Leyweg 275, Den Haag, Netherlands",52.0482224,4.2771498
+IJSSELLAND ZIEKENHUIS,H,Prins Constantijnweg,2,,2906 ZC,Capelle aan den IJssel,Rotterdam,"Prins Constantijnweg 2, Capelle aan den IJssel, Netherlands",51.9386958,4.5628699
+IKAZIA ZIEKENHUIS,H,Montessoriweg,1,,3083 AN,Rotterdam,Rotterdam,"Montessoriweg 1, Rotterdam, Netherlands",51.8863454,4.4934081
+HET LANGELAND ZIEKENHUIS,H,Toneellaan,1,,2725 NA ,Zoetermeer ,Rotterdam,"Toneellaan 1, Zoetermeer , Netherlands",52.0688776,4.4996176
+BRAVIS ZIEKENHUIS (BERGEN OP ZOOM),H,Boerhaaveplein,1,,4624 VT,Bergen op Zoom,Rotterdam,"Boerhaaveplein 1, Bergen op Zoom, Netherlands",51.4866813,4.3146655
+MAASSTAD ZIEKENHUIS,H,Maasstadweg,21,,3079 DZ,Rotterdam,Rotterdam,"Maasstadweg 21, Rotterdam, Netherlands",51.87943115,4.53541036796637
+MILITAIRE BLOEDBANK,H,Plesmanlaan,1,C,2333 BZ,Leiden,Amsterdam,"Plesmanlaan 1, Leiden, Netherlands",52.1636348,4.4798877
+MEDISCH CENTRUM HAAGLANDEN (WESTEINDE),H,Lijnbaan,32,,2512 VA,Den Haag,Rotterdam,"Lijnbaan 32, Den Haag, Netherlands",52.07408735,4.299584206892999
+REINIER DE GRAAF GROEP,H,Reinier de Graafweg,3,11,2625 AD,Delft,Rotterdam,"Reinier de Graafweg 3, Delft, Netherlands",51.998136,4.3375311
+SPIJKENISSE MEDISCH CENTRUM,H,Ruwaard van Puttenweg,500,,3201 GZ,Spijkenisse,Rotterdam,"Ruwaard van Puttenweg 500, Spijkenisse, Netherlands",51.8464646,4.337413536102007
+SINT FRANCISCUS GASTHUIS,H,Kleiweg,500,,3045 PM,Rotterdam,Rotterdam,"Kleiweg 500, Rotterdam, Netherlands",51.9422583,4.4623693
+VAN WEEL-BETHESDA ZIEKENHUIS,H,Stationsweg,22,,3247 BW,Dirksland,Rotterdam,"Stationsweg 22, Dirksland, Netherlands",51.7503916,4.1019881
+VLIETLAND ZIEKENHUIS,H,Vlietlandplein,2,,3118 JH,Schiedam,Rotterdam,"Vlietlandplein 2, Schiedam, Netherlands",51.9222764,4.3799763
+STICHTING ZORGSAAM ZIEKENHUIS,H,Wielingenlaan,2,,4535 PA,Terneuzen,Rotterdam,"Wielingenlaan 2, Terneuzen, Netherlands",51.3089608,3.8613584
+ERASMUS MC,H,s-Gravendijkwal,230,,3015 CE,Rotterdam,Rotterdam,"s-Gravendijkwal 230, Rotterdam, Netherlands",51.9100181,4.4659629
+LEIDS UNIVERSITAIR MEDISCH CENTRUM,H,Albinusdreef,2,,2333 ZA,Leiden,Amsterdam,"Albinusdreef 2, Leiden, Netherlands",52.16630895,4.477314989716614
+ACADEMISCH MEDISCH CENTRUM,H,Meibergdreef,9,,1105 AZ,Amsterdam,Amsterdam,"Meibergdreef 9, Amsterdam, Netherlands",52.2924635,4.956576595884709
+ANTONI VAN LEEUWENHOEK ZIEKENHUIS,H,Plesmanlaan,121,,1066 CX,Amsterdam,Amsterdam,"Plesmanlaan 121, Amsterdam, Netherlands",52.3494454,4.8253264
+BOVENIJ ZIEKENHUIS,H,Statenjachtstraat,1,,1034 CS,Amsterdam,Amsterdam,"Statenjachtstraat 1, Amsterdam, Netherlands",52.4044488,4.9222188
+DIAKONESSENHUIS (UTRECHT),H,Bosboomstraat,1,,3582 KE,Utrecht,Amsterdam,"Bosboomstraat 1, Utrecht, Netherlands",52.0815591,5.1382691
+FLEVO ZIEKENHUIS,H,Hospitaalweg,1,,1315 RA,Almere,Amsterdam,"Hospitaalweg 1, Almere, Netherlands",52.3692186,5.2233239
+NOORDWEST ZIEKENHUISGROEP (DEN HELDER),H,Huisduinerweg,3,,1782 GZ,Den Helder,Amsterdam,"Huisduinerweg 3, Den Helder, Netherlands",52.9579545,4.7446114
+ST JANSDAL ZIEKENHUIS (LELYSTAD),H,Ziekenhuisweg,100,,8233 AA,Lelystad,Amsterdam,"Ziekenhuisweg 100, Lelystad, Netherlands",52.5043943,5.4766817
+SPAARNE GASTHUIS (HAARLEM),H,Boerhaavelaan,22,,2035 RC,Haarlem,Amsterdam,"Boerhaavelaan 22, Haarlem, Netherlands",52.36607345,4.651996176848152
+MEANDER MEDISCH CENTRUM,H,Utrechtseweg,160,,3818 ES,Amersfoort,Amsterdam,"Utrechtseweg 160, Amersfoort, Netherlands",52.1392219,5.3522552
+MEDISCH CENTRUM ALKMAAR,H,Wilhelminalaan,12,,1815 JD,Alkmaar,Amsterdam,"Wilhelminalaan 12, Alkmaar, Netherlands",52.6281005,4.7371604
+DIAKONESSENHUIS (ZEIST),H,Jagersingel,1,,3707 HL,Zeist,Amsterdam,"Jagersingel 1, Zeist, Netherlands",52.0915391,5.2622946
+OLVG OOST,H,Oosterpark,9,,1091 AC,Amsterdam,Amsterdam,"Oosterpark 9, Amsterdam, Netherlands",52.3582579,4.9161619
+RODE KRUIS ZIEKENHUIS,H,Vondellaan ,13,,1942 LE,Beverwijk,Amsterdam,"Vondellaan  13, Beverwijk, Netherlands",52.4794618,4.6507711
+OLVG WEST,H,Jan Tooropstraat,164,,1061 AE,Amsterdam,Amsterdam,"Jan Tooropstraat 164, Amsterdam, Netherlands",52.3708582,4.839827005917686
+SPAARNE GASTHUIS (HOOFDDORP),H,Spaarnepoort ,1,,2134 TM,Hoofddorp,Amsterdam,"Spaarnepoort  1, Hoofddorp, Netherlands",52.3235887,4.652998598790555
+ST ANTONIUS ZIEKENHUIS (NIEUWEGEIN),H,Koekoekslaan ,1,,3435 CM,Nieuwegein,Amsterdam,"Koekoekslaan  1, Nieuwegein, Netherlands",52.0245389,5.0825088
+ST ANTONIUS ZIEKENHUIS (UTRECHT OUDENRIJN),H,Soestwetering,1,,3543 AZ,Utrecht,Amsterdam,"Soestwetering 1, Utrecht, Netherlands",52.1026918,5.0586192
+TERGOOIZIEKENHUIZEN (BLARICUM),H,Rijksstraatweg,1,,1261 AN,Blaricum,Amsterdam,"Rijksstraatweg 1, Blaricum, Netherlands",52.2676538,5.207674
+TERGOOIZIEKENHUIZEN (HILVERSUM),H,Van Riebeeckweg,212,,1213 XZ,Hilversum,Amsterdam,"Van Riebeeckweg 212, Hilversum, Netherlands",52.2169171,5.2015477
+ALRIJNE ZIEKENHUIS (LEIDEN),H,Houtlaan,55,,2334 CK,Leiden,Amsterdam,"Houtlaan 55, Leiden, Netherlands",52.1740179,4.4827421
+ALRIJNE ZIEKENHUIS (LEIDERDORP),H,Simon Smitweg,1,,2353 GA,Leiderdorp,Amsterdam,"Simon Smitweg 1, Leiderdorp, Netherlands",52.1572523,4.5410356
+HAAGLANDEN MEDISCH CENTRUM (ANTONIUSHOVEN),H,Burgemeester Banninglaan,1,,2262 BA,Leidschendam,Amsterdam,"Burgemeester Banninglaan 1, Leidschendam, Netherlands",52.0925754,4.3834479
+UNIVERSITAIR MEDISCH CENTRUM UTRECHT,H,Lundlaan,6,,3584 EA,Utrecht,Amsterdam,"Lundlaan 6, Utrecht, Netherlands",52.0891679,5.1803369
+VU MEDISCH CENTRUM,H,Amstelveenseweg,601,,1081 JC,Amsterdam,Amsterdam,"Amstelveenseweg 601, Amsterdam, Netherlands",52.3325604,4.8584018
+DIJKLANDER ZIEKENHUIS (PURMEREND),H,Waterlandlaan,250,,1441 RN,Purmerend,Amsterdam,"Waterlandlaan 250, Purmerend, Netherlands",52.5004649,4.9624926
+DIJKLANDER ZIEKENHUIS (HOORN),H,Maelsonstraat,3,,1624 NP,Hoorn,Amsterdam,"Maelsonstraat 3, Hoorn, Netherlands",52.647468700000005,5.05529974035423
+ZAANS MEDISCH CENTRUM,H,Koningin Julianaplein,58,,1502 DV,Zaandam,Amsterdam,"Koningin Julianaplein 58, Zaandam, Netherlands",52.4533015,4.8256885
+AMSTELLAND ZIEKENHUIS,H,Laan van de Helende Meesters,8,,1186 AM,Amstelveen,Amsterdam,"Laan van de Helende Meesters 8, Amstelveen, Netherlands",52.293437,4.8749498
+ZIEKENHUIS RIJNSTATE,H,Wagnerlaan,55,,6815 AD,Arnhem,Nijmegen,"Wagnerlaan 55, Arnhem, Netherlands",52.0003784,5.909720046417444
+MAASZIEKENHUIS PANTEIN,H,Dokter Kopstraat,1,,5835DV,Beugen,Nijmegen,"Dokter Kopstraat 1, Beugen, Netherlands",51.6635586,5.9403546
+SLINGELAND ZIEKENHUIS,H,Kruisbergseweg,25,,7009 BL,Doetinchem,Nijmegen,"Kruisbergseweg 25, Doetinchem, Netherlands",51.9765384,6.2855266
+GELDERSE VALLEI,H,Willy Brandtlaan,10,,6716 RP,Ede,Nijmegen,"Willy Brandtlaan 10, Ede, Netherlands",52.0228218,5.6455098
+UNIVERSITAIR LONGCENTRUM DEKKERSWALD,H,Nijmeegsebaan,31,,6561 KE,Groesbeek,Nijmegen,"Nijmeegsebaan 31, Groesbeek, Netherlands",51.8015298,5.8949526
+CANISIUS WILHELMINA ZIEKENHUIS,H,Weg door Jonkerbos,100,,6532 SZ,Nijmegen,Nijmegen,"Weg door Jonkerbos 100, Nijmegen, Netherlands",51.81753575,5.831129006175855
+SINT MAARTENSKLINIEK,H,Hengstdal,3,,6522 JV,Nijmegen,Nijmegen,"Hengstdal 3, Nijmegen, Netherlands",51.8326446,5.8958866
+RADBOUD UMC,H,Geert Grooteplein-Zuid,10,,6525 GA,Nijmegen,Nijmegen,"Geert Grooteplein-Zuid 10, Nijmegen, Netherlands",51.8237099,5.8598624
+BERNHOVEN ZIEKENHUIS,H,Nistelrodeseweg,10,,5406 PT,Uden,Nijmegen,"Nistelrodeseweg 10, Uden, Netherlands",51.6737903,5.6055643
+ZIEKENHUIS RIVIERENLAND,H,Pres. Kennedylaan,1,,4002 WP,Tiel,Nijmegen,"Pres. Kennedylaan 1, Tiel, Netherlands",51.8899934,5.414904701256226
+VIECURI MEDISCH CENTRUM,H,Tegelseweg,210,,5912 BL,Venlo,Nijmegen,"Tegelseweg 210, Venlo, Netherlands",51.3572099,6.1540198
+"ALYSIS ZORGGROEP, ZIEKENHUIS ZEVENAAR",H,Hunneveldweg,14,A,6903 ZN,Zevenaar,Nijmegen,"Hunneveldweg 14, Zevenaar, Netherlands",51.9419589,6.0686884
+JEROEN BOSCH ZIEKENHUIS,H,Tolbrugstraat,11,,5211 NL,Den Bosch,Eindhoven,"Tolbrugstraat 11, Den Bosch, Netherlands",51.6916081,5.3051541
+CATHARINA ZIEKENHUIS,H,Michelangelolaan,2,,5623 EJ,Eindhoven,Eindhoven,"Michelangelolaan 2, Eindhoven, Netherlands",51.46569205,5.472034887911818
+MAXIMA MEDISCH CENTRUM (EINDHOVEN),H,Dominee Theodor Fliednerstraat,1,,5631 BM,Eindhoven,Eindhoven,"Dominee Theodor Fliednerstraat 1, Eindhoven, Netherlands",51.4547106,5.4878648
+ST. ANNA ZIEKENHUIS,H,Bogardeind,2,,5664 EH,Geldrop,Eindhoven,"Bogardeind 2, Geldrop, Netherlands",51.4198514,5.5585586
+ELKERLIEK ZIEKENHUIS,H,Wesselmanlaan,25,,5707 HA,Helmond,Eindhoven,"Wesselmanlaan 25, Helmond, Netherlands",51.4818128,5.6424049
+ELISABETH TWEESTEDEN ZIEKENHUIS,H,Hilvarenbeekseweg,60,,5022 GC,Tilburg,Eindhoven,"Hilvarenbeekseweg 60, Tilburg, Netherlands",51.53943,5.1035222
+MAXIMA MEDISCH CENTRUM (VELDHOVEN),H,De Run,4600,,5504 DB,Veldhoven,Eindhoven,"De Run 4600, Veldhoven, Netherlands",51.4054195,5.419928455452013
+ST. JANS GASTHUIS,H,Vogelsbleek,5,,6001 BE,Weert,Eindhoven,"Vogelsbleek 5, Weert, Netherlands",51.2543474,5.7128186
+ZUYDERLAND MEDISCH CENTRUM (HEERLEN),H,Henri Dunantstraat,5,,6419 PC,Heerlen,Maastricht,"Henri Dunantstraat 5, Heerlen, Netherlands",50.8686579,5.9768939
+MUMC+,H,P. Debyelaan,25,,6229 HX,Maastricht,Maastricht,"P. Debyelaan 25, Maastricht, Netherlands",50.83432775,5.712711471610612
+LAURENTIUS ZIEKENHUIS,H,Mgr. Driessenstraat,6,,6043 CV,Roermond,Maastricht,"Mgr. Driessenstraat 6, Roermond, Netherlands",51.1918223,5.9988473
+ZUYDERLAND MEDISCH CENTRUM (SITTARD),H,Dr. H. van der Hoffplein,1,,6162 BG,Sittard-Geleen,Maastricht,"Dr. H. van der Hoffplein 1, Sittard-Geleen, Netherlands",50.9831869,5.8445955
+GRONINGEN UMC,H,Hanzeplein,1,,9713 GZ,Groningen,Groningen,"Hanzeplein 1, Groningen, Netherlands",53.22310875,6.574140252549992
+MARTINI ZIEKENHUIS,H,Van Swietenplein,1,,9728 NT,Groningen,Groningen,"Van Swietenplein 1, Groningen, Netherlands",53.19162995,6.550999518154377
+MEDISCH CENTRUM LEEUWARDEN,H,Henri Dunantweg,2,,8934 AD,Leeuwarden,Groningen,"Henri Dunantweg 2, Leeuwarden, Netherlands",53.1888721,5.8069156
+ANTONIUS ZIEKENHUIS (SNEEK),H,Bolswarderbaan,1,,8601 ZK,Sneek,Groningen,"Bolswarderbaan 1, Sneek, Netherlands",53.034689,5.642867
+TJONGERSCHANS ZIEKENHUIS,H,Thialfweg,44,,8441 PW,Heerenveen,Groningen,"Thialfweg 44, Heerenveen, Netherlands",52.9661457,5.9176989
+OMMELANDER ZIEKENHUIS GROEP (DELFZICHT),H,Jachtlaan,50,,9934 JD,Delfzijl,Groningen,"Jachtlaan 50, Delfzijl, Netherlands",53.3265075,6.9043681
+OMMELANDER ZIEKENHUIS GROEP (LUCAS),H,Gassingel,18,,9671 CX,Winschoten,Groningen,"Gassingel 18, Winschoten, Netherlands",53.1461161,7.0367074
+DIAKONESSENHUIS (MEPPEL),H,Hoogeveenseweg,38,,7943 KA,Meppel,Groningen,"Hoogeveenseweg 38, Meppel, Netherlands",52.6909404,6.21742
+NIJ SMELLINGHE ZIEKENHUIS,H,Compagnonsplein,1,,9202 NN,Drachten,Groningen,"Compagnonsplein 1, Drachten, Netherlands",53.099237,6.1108537
+REFAJA ZIEKENHUIS,H,Boerhaavestraat,1,,9501 HE,Stadskanaal,Groningen,"Boerhaavestraat 1, Stadskanaal, Netherlands",53.0019272,6.9358116
+SCHEPER ZIEKENHUIS,H,Boermarkeweg,60,,7824 AA,Emmen,Groningen,"Boermarkeweg 60, Emmen, Netherlands",52.785673,6.9130824
+WILHELMINA ZIEKENHUIS (ASSEN),H,Europaweg-Zuid,1,,9401 RK,Assen,Groningen,"Europaweg-Zuid 1, Assen, Netherlands",52.9835649,6.5648607
+BETHESDA ZIEKENHUIS,H,Dr. G.H. Amshoffweg,1,,7909 AA,Hoogeveen,Groningen,"Dr. G.H. Amshoffweg 1, Hoogeveen, Netherlands",52.726787,6.4602857
+TALMA SIONSBERG ZIEKENHUIS,H,Birdaarderstraatweg,70,,9101 DC,Dokkum,Groningen,"Birdaarderstraatweg 70, Dokkum, Netherlands",53.320354,5.9917755
+DEVENTER ZIEKENHUISGROEP,H,Nico Bolkesteinlaan,75,,7416 SE,Deventer,Deventer,"Nico Bolkesteinlaan 75, Deventer, Netherlands",52.26132305,6.191653692279623
+ISALA KLINIEKEN (SOPHIA),H,Dr. Van Heesweg,2,,8025 AB,Zwolle,Deventer,"Dr. Van Heesweg 2, Zwolle, Netherlands",52.5130751,6.124036546073073
+ISALA KLINIEKEN (WEEZENLANDEN),H,Groot Wezenland,20,,8011 JW,Zwolle,Deventer,"Groot Wezenland 20, Zwolle, Netherlands",52.509217,6.097986
+GELRE ZIEKENHUIZEN (APELDOORN),H,Albert Schweitzerlaan,31,,7334 DZ,Apeldoorn,Deventer,"Albert Schweitzerlaan 31, Apeldoorn, Netherlands",52.18138485,5.947164391033272
+GELRE ZIEKENHUIZEN (ZUTPHEN),H,Ooyerhoekseweg,8,,7207 BA,Zutphen,Deventer,"Ooyerhoekseweg 8, Zutphen, Netherlands",52.12486,6.22029
+SAXENBURGH GROEP RÖPKE-ZWEERS ZIEKENHUIS,H,Jan Weitkamplaan,4,A,7772 SE,Hardenberg,Deventer,"Jan Weitkamplaan 4, Hardenberg, Netherlands",52.5700222,6.6329944
+ST JANSDAL ZIEKENHUIS (HARDERWIJK),H,Wethouder Jansenlaan,90,,3844 DG,Harderwijk,Deventer,"Wethouder Jansenlaan 90, Harderwijk, Netherlands",52.3419997,5.6160918
+MEDISCH SPECTRUM TWENTE,H,Koningstraat,1,,7512 KZ,Enschede,Deventer,"Koningstraat 1, Enschede, Netherlands",52.2174163,6.8908887
+SKB  WINTERSWIJK,H,Beatrixpark 1,1,,7101 BN,Winterswijk,Deventer,"Beatrixpark 1 1, Winterswijk, Netherlands",51.9792065,6.7023812
+ZGT (ALMELO),H,Zilvermeeuw 1,1,,7609 PP,Almelo,Deventer,"Zilvermeeuw 1 1, Almelo, Netherlands",52.3385294,6.6429899500000005
+ANTONIUS ZIEKENHUIS (WOERDEN),H,Polanerbaan,2,,3447 GN,Woerden,Utrecht,"Polanerbaan 2, Woerden, Netherlands",52.0800905,4.8918902
+ALEXANDER MONRO ZIEKENHUIS,H,Professor Bronkhorstlaan,10,,3723 MB,Bilthoven,Utrecht,"Professor Bronkhorstlaan 10, Bilthoven, Netherlands",52.1539769,5.2045583
+ALRIJNE ZIEKENHUIS (ALPHEN),H,Meteoorlaan,4,,2402 WC,Alphen aan den Rijn,Rotterdam,"Meteoorlaan 4, Alphen aan den Rijn, Netherlands",52.1433504,4.6621352
+ALRIJNE ZIEKENHUIS (SASSENHEIM),H,Jan van Brabantweg,33,,2171 HE,Sassenheim,Rotterdam,"Jan van Brabantweg 33, Sassenheim, Netherlands",52.2295928,4.5243287
+ALRIJNE ZIEKENHUIS (KATWIJK),H,Randweg,47,,2225 PJ,Katwijk aan Zee,Rotterdam,"Randweg 47, Katwijk aan Zee, Netherlands",52.1997687,4.4046549
+OMMELANDER ZIEKENHUIS GROEP (GRONINGEN),H,Pastorieweg,1,,9679 BJ,Scheemda,Groningen,"Pastorieweg 1, Scheemda, Netherlands",53.1829634,6.9593124
+HAGA ZIEKENHUIS (REINIER),H,Reinier de Graafweg,5,,2625 AD,Delft,Rotterdam,"Reinier de Graafweg 5, Delft, Netherlands",51.99736855,4.3376095462054
+ZGT (HENGELO),H,Geerdinksweg,141,,7555 DL,Hengelo,Eindhoven,"Geerdinksweg 141, Hengelo, Netherlands",52.2637546,6.7700251
+PRINSES MAXIMA CENTRUM,H,Heidelberglaan,25,,3584 CS,Utrecht,Utrecht,"Heidelberglaan 25, Utrecht, Netherlands",52.0898838,5.1833223
